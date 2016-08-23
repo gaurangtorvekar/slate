@@ -1,11 +1,9 @@
 ---
-title: API Reference
+title: Attores API Reference
 
 language_tabs:
   - shell
-  - ruby
-  - python
-  - javascript
+  - code
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -19,27 +17,13 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Attores API! You can use our API to access Attores API endpoints, which can get information on various things like creating your own wallet on the Ethereum testnet, sending and receiving Ether, and also taking deploying some actual Smart Contracts based on Attores Smart Contract templates.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+You can view code examples on the right section of this page.
 
 # Authentication
 
 > To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -47,7 +31,7 @@ curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
+```code
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
@@ -69,26 +53,12 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Get All Kittens
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
 ```shell
 curl "http://example.com/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
+```code
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
@@ -135,26 +105,12 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```shell
 curl "http://example.com/api/kittens/2"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
+```code
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
@@ -186,4 +142,154 @@ This endpoint retrieves a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
+
+<!-- -------- -->
+# Getting balances
+
+## Single Address
+
+```shell
+curl "https://dashboard.attores.com/api/kittens"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let kittens = api.kittens.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{"result":"22920041570577377666"}
+```
+
+This endpoint retrieves the balance of a single address from the Ethereum testnet.
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/getbalance`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+address | String | The address from which you want to find the balance.
+
+
+## Multiple addresses
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "result":{  
+      "0xe6e5a2941297b0c2850441740b04ea194b841f14":"22920041570577377666",
+      "0xf36ca68454b2d8f3b404f06a9aea8f505f4c8359":"0",
+      "0xb27a2b2b3fe4f2e4bb36d9c03fb8d504c98d8ecb":"54812560560970167641"
+  }
+}
+```
+
+This endpoint retrieves the balances of an array of addresses that you send.
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/getbalances`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+addresses | Comma separated strings | The addresses from which you want to find the balances.
+
+# Wallet Management
+
+## Create a Wallet
+
+```shell
+curl "https://dashboard.attores.com/api/createWallet"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let kittens = api.kittens.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "pubKey": "0x4b97ffa8b449513a76bef73da42d8eabbd477184",
+  "seed": "circle rough trumpet witness embody neck crucial series derive senior else kind"
+}
+
+```
+
+This endpoint creates a Seed and a public/private key pair based on the random entropy value that you send.
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/getbalance`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+entropyValue | String | Entropy in the form of a random string, at least 100 characters in length. Helps to create a truly random public keypair
+
+
+
+## Set seed
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "pubKey": "0x4b97ffa8b449513a76bef73da42d8eabbd477184"
+}
+```
+You can send your seed to this endpoint, which will return a public address generated from that seed.
+
+The seed is a series of random words which are used to create the private key and public key (public address). When you sign the transaction with the seed, the browser converts this into the private key and uses this to sign the transaction.
+
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/setSeed`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+seed | String | The 12-word mnemonic, which will create a public/private keypair using which you can sign the transactions
 
