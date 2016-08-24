@@ -6,8 +6,8 @@ language_tabs:
   - code
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://dashboard.attores.com/keys' target="_blank">Sign Up for a Developer Key</a>
+  - <a href='http://attores.com' target="_blank">Attores Landing Page</a>
 
 includes:
   - errors
@@ -21,6 +21,7 @@ Welcome to the Attores API! You can use our API to access Attores API endpoints,
 
 You can view code examples on the right section of this page.
 
+<!-- ====================================================================================================== -->
 # Authentication
 
 > To authorize, use this code:
@@ -49,6 +50,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
+<!-- ====================================================================================================== -->
 # Kittens
 
 ## Get All Kittens
@@ -143,7 +145,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
 
-<!-- -------- -->
+<!-- ====================================================================================================== -->
 # Getting balances
 
 ## Single Address
@@ -217,6 +219,7 @@ Parameter | Type | Description
 --------- | ------- | -----------
 addresses | Comma separated strings | The addresses from which you want to find the balances.
 
+<!-- ====================================================================================================== -->
 # Wallet Management
 
 ## Create a Wallet
@@ -293,3 +296,90 @@ Parameter | Type | Description
 --------- | ------- | -----------
 seed | String | The 12-word mnemonic, which will create a public/private keypair using which you can sign the transactions
 
+<!-- ====================================================================================================== -->
+
+# Creating Smart Contracts
+
+## Create a Digital Certificate
+
+```shell
+curl "https://dashboard.attores.com/api/createCertificate
+"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let kittens = api.kittens.get();
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "contractAddress": "0x4b97ffa8b449513a76bef73da42d8eabbd477184"
+}
+
+
+```
+
+This endpoint helps you ccreate and deploy a Smart Contract on the blockchain. Just send in some parameters for the Smart COntract and it will return a contract address on the testnet
+
+### HTTP Request
+
+`POST https://dashboard.attores.com/api/rest/createCertificate`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+seed | String | Entropy in the form of a random string, at least 100 characters in length. 
+issuanceDate | String | Entropy in the form of a random string, at least 100 characters in length. 
+studentName | String | Entropy in the form of a random string, at least 100 characters in length. 
+courseName | String | Entropy in the form of a random string, at least 100 characters in length. 
+ipfsHash | String | Entropy in the form of a random string, at least 100 characters in length. 
+owner | String | Entropy in the form of a random string, at least 100 characters in length. 
+directorPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
+chairmanPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
+studentPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
+directorName | String | Entropy in the form of a random string, at least 100 characters in length. 
+chairmanName | String | Entropy in the form of a random string, at least 100 characters in length. 
+
+
+## Hackathon copyright
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```code
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{  
+  "pubKey": "0x4b97ffa8b449513a76bef73da42d8eabbd477184"
+}
+```
+This endpoint will enable you to 'copyright' your project for this hackathon onto the blockchain in the form of a Smart Contract.
+
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/setSeed`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+seed | String | The 12-word mnemonic, which will create a public/private keypair using which you can sign the transactions
+
+<!-- ====================================================================================================== -->
