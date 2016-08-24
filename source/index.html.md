@@ -17,7 +17,7 @@ search: true
 
 # Introduction
 
-Welcome to the Attores API! You can use our API to access Attores API endpoints, which can get information on various things like creating your own wallet on the Ethereum testnet, sending and receiving Ether, and also taking deploying some actual Smart Contracts based on Attores Smart Contract templates.
+Welcome to the Attores API! You can use our API to access Attores API endpoints, which can get information on various things like creating your own wallet on the Ethereum testnet, sending and receiving Ether, and deploying some actual Smart Contracts based on the Attores Smart Contract templates.
 
 You can view code examples on the right section of this page.
 
