@@ -65,7 +65,7 @@ This endpoint retrieves all kittens.
 
 `GET http://example.com/api/kittens`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -145,7 +145,7 @@ This endpoint retrieves the balance of a single address from the Ethereum testne
 
 `GET https://dashboard.attores.com/api/rest/getbalance`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -221,9 +221,9 @@ This endpoint creates a Seed and a public/private key pair based on the random e
 
 ### HTTP Request
 
-`GET https://dashboard.attores.com/api/rest/getbalance`
+`GET https://dashboard.attores.com/api/rest/createWallet`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -302,7 +302,7 @@ This endpoint helps you ccreate and deploy a Smart Contract on the blockchain. J
 
 `POST https://dashboard.attores.com/api/rest/createCertificate`
 
-### Query Parameters
+### URL Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
@@ -322,7 +322,7 @@ chairmanName | String | Entropy in the form of a random string, at least 100 cha
 ## Hackathon copyright
 
 ```shell
-curl "http://example.com/api/kittens/2"
+curl "https://dashboard.attores.com/api/rest/hackHash"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -345,12 +345,14 @@ This endpoint will enable you to 'copyright' your project for this hackathon ont
 
 ### HTTP Request
 
-`GET https://dashboard.attores.com/api/rest/setSeed`
+`POST https://dashboard.attores.com/api/rest/hackHash`
 
-### URL Parameters
+### Method Parameters
 
 Parameter | Type | Description
 --------- | ------- | -----------
 seed | String | The 12-word mnemonic, which will create a public/private keypair using which you can sign the transactions
+projectHash | String | Hash of the project code
+owner | String | The public key of the owner of this contract
 
 <!-- ====================================================================================================== -->
