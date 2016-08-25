@@ -237,8 +237,9 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-  "pubKey": "0x02583fb90e43ea5afa3b685ed5d55b0410a137c2",
-  "seed": "ring soup raven heavy tomato friend cost rather remember fat mass sibling"
+  "pubKey": "e44713b2190c63fb50e603de196819498b13f6a2d845642e6b0c07f09e6f2e41",
+  "seed": "ring soup raven heavy tomato friend cost rather remember fat mass sibling",
+  "address": "66addf1704cc1cd6a1e66ed334daf71a0c397ffd"
 }
 ```
 
@@ -282,7 +283,7 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {  
-  "pubKey": "0x4b97ffa8b449513a76bef73da42d8eabbd477184"
+  "pubKey": "e44713b2190c63fb50e603de196819498b13f6a2d845642e6b0c07f09e6f2e41"
 }
 ```
 You can send your seed to this endpoint, which will return a public address generated from that seed.
