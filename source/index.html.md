@@ -27,7 +27,7 @@ You can view code examples on the right section of this page.
 ## Single Address
 
 ```shell
-curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: 6d8ee2db-cc64-f848-ba7b-a264a79be9d8" "https://dashboard.attores.com/api/rest/getbalance?key=jWH622nG5JuqqFMCn&address=0xe6e5a2941297b0c2850441740b04ea194b841f14"
+curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/getbalance?key=jWH622nG5JuqqFMCn&address=0xe6e5a2941297b0c2850441740b04ea194b841f14"
 ```
 
 ```code
@@ -37,8 +37,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/getbalance?key=jWH622nG5JuqqFMCn&address=0xe6e5a2941297b0c2850441740b04ea194b841f14",
   "method": "GET",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "51ea0275-0ba0-951a-6cb2-6786287f90db"
+    "cache-control": "no-cache"
   }
 }
 
@@ -71,7 +70,7 @@ address | String | The address from which you want to find the balance.
 ## Multiple addresses
 
 ```shell
-curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: 0ee76083-a373-974b-d57b-baca1fd042de" "https://dashboard.attores.com/api/rest/getbalances?key=jWH622nG5JuqqFMCn&addresses=0xe6e5a2941297b0c2850441740b04ea194b841f14,0xb27a2b2b3fe4f2e4bb36d9c03fb8d504c98d8ecb,0xf36ca68454b2d8f3b404f06a9aea8f505f4c8359"
+curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/getbalances?key=jWH622nG5JuqqFMCn&addresses=0xe6e5a2941297b0c2850441740b04ea194b841f14,0xb27a2b2b3fe4f2e4bb36d9c03fb8d504c98d8ecb,0xf36ca68454b2d8f3b404f06a9aea8f505f4c8359"
 ```
 
 ```code
@@ -81,8 +80,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/getbalances?key=jWH622nG5JuqqFMCn&addresses=0xe6e5a2941297b0c2850441740b04ea194b841f14%2C0xb27a2b2b3fe4f2e4bb36d9c03fb8d504c98d8ecb%2C0xf36ca68454b2d8f3b404f06a9aea8f505f4c8359",
   "method": "GET",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "b051a168-b43d-f226-351c-4e4629b1df2b"
+    "cache-control": "no-cache"
   }
 }
 
@@ -121,7 +119,7 @@ addresses | Comma separated strings | The addresses from which you want to find 
 ## Create a Wallet
 
 ```shell
-curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: e61e2d3d-66bb-3ab3-378e-d4c816a80533" "https://dashboard.attores.com/api/rest/createWallet?key=jWH622nG5JuqqFMCn&entropyValue=adjfkjskadlfjkjasdkfjksadfsadkfklasjdklfjioewafkanwvn39034590345jfsdjvijejvjew9viwejivhjwejv;ewlkfjweiofwefpwefwef"
+curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/createWallet?key=jWH622nG5JuqqFMCn&entropyValue=adjfkjskadlfjkjasdkfjksadfsadkfklasjdklfjioewafkanwvn39034590345jfsdjvijejvjew9viwejivhjwejv;ewlkfjweiofwefpwefwef"
 ```
 
 ```code
@@ -131,8 +129,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/createWallet?key=jWH622nG5JuqqFMCn&entropyValue=adjfkjskadlfjkjasdkfjksadfsadkfklasjdklfjioewafkanwvn39034590345jfsdjvijejvjew9viwejivhjwejv%3Bewlkfjweiofwefpwefwef",
   "method": "GET",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "8e4bbad4-f737-4142-7024-d33f3f4a6389"
+    "cache-control": "no-cache"
   }
 }
 
@@ -167,7 +164,7 @@ entropyValue | String | Entropy in the form of a random string, at least 100 cha
 ## Set seed
 
 ```shell
-curl -X GET -H "Cache-Control: no-cache" -H "Postman-Token: 260f27d5-96cc-0442-93f0-0271afe628a7" "https://dashboard.attores.com/api/rest/setSeed?key=jWH622nG5JuqqFMCn&seed=ring%20soup%20raven%20heavy%20tomato%20friend%20cost%20rather%20remember%20fat%20mass%20sibling"
+curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/setSeed?key=jWH622nG5JuqqFMCn&seed=ring%20soup%20raven%20heavy%20tomato%20friend%20cost%20rather%20remember%20fat%20mass%20sibling"
 ```
 
 ```code
@@ -177,8 +174,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/setSeed?key=jWH622nG5JuqqFMCn&seed=ring%20soup%20raven%20heavy%20tomato%20friend%20cost%20rather%20remember%20fat%20mass%20sibling",
   "method": "GET",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "bce49f0c-74de-f731-0398-7b3ccd19ead0"
+    "cache-control": "no-cache"
   }
 }
 
@@ -216,7 +212,7 @@ seed | String | The 12-word mnemonic, which will create a public/private keypair
 ## Create a Digital Certificate
 
 ```shell
-curl -X POST -H "Cache-Control: no-cache" -H "Postman-Token: bba7699f-3c19-838b-684e-8e46bc30d307" -H "Content-Type: application/x-www-form-urlencoded" -d 'key=aGXjpRyjv72QvPQPZ&seed=circle rough trumpet witness embody neck crucial series derive senior else kind&issuanceDate=12th July 2016&studentName=John&courseName=Blockchain Development&ipfsHash=QmbuuLzxztp35bEcMp6VXx2y7NSm1aQTPhxRyKr3zZTgCN&owner=0x4b97ffa8b449513a76bef73da42d8eabbd477184&directorName=Eden&chairmanName=Rob&directorPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184&chairmanPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184&studentPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184' "https://dashboard.attores.com/api/rest/createCertificate"
+curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'key=aGXjpRyjv72QvPQPZ&seed=circle rough trumpet witness embody neck crucial series derive senior else kind&issuanceDate=12th July 2016&studentName=John&courseName=Blockchain Development&ipfsHash=QmbuuLzxztp35bEcMp6VXx2y7NSm1aQTPhxRyKr3zZTgCN&owner=0x4b97ffa8b449513a76bef73da42d8eabbd477184&directorName=Eden&chairmanName=Rob&directorPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184&chairmanPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184&studentPubKey=0x4b97ffa8b449513a76bef73da42d8eabbd477184' "https://dashboard.attores.com/api/rest/createCertificate"
 ```
 
 ```code
@@ -226,8 +222,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/createCertificate",
   "method": "POST",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "d3f75bdb-9701-ae01-20ad-42d730c059f3",
+    "cache-control": "no-cache"
     "content-type": "application/x-www-form-urlencoded"
   },
   "data": {
@@ -287,7 +282,7 @@ chairmanName | String | Entropy in the form of a random string, at least 100 cha
 ## Hackathon copyright
 
 ```shell
-curl -X POST -H "Cache-Control: no-cache" -H "Postman-Token: 25483aae-63c4-bd25-a13e-c972daf42c6d" -H "Content-Type: application/x-www-form-urlencoded" -d 'key=y6jxTL8q7uqBWPg6o&seed=circle rough trumpet witness embody neck crucial series derive senior else kind&projectHash=Qm&owner=0x4b97ffa8b449513a76bef73da42d8eabbd477184' "https://dashboard.attores.com/api/rest/hackHash"
+curl -X POST -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'key=y6jxTL8q7uqBWPg6o&seed=circle rough trumpet witness embody neck crucial series derive senior else kind&projectHash=Qm&owner=0x4b97ffa8b449513a76bef73da42d8eabbd477184' "https://dashboard.attores.com/api/rest/hackHash"
 ```
 
 ```code
@@ -297,8 +292,7 @@ var settings = {
   "url": "https://dashboard.attores.com/api/rest/hackHash",
   "method": "POST",
   "headers": {
-    "cache-control": "no-cache",
-    "postman-token": "976fa3e0-5b53-0bc0-3f90-7646fff3e453",
+    "cache-control": "no-cache"
     "content-type": "application/x-www-form-urlencoded"
   },
   "data": {
