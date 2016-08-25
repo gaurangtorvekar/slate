@@ -411,7 +411,7 @@ $.ajax(settings).done(function (response) {
   "contractAddress": "0x1f304ff2916fcdd8c1a79583d6512d59be9c0854"
 }
 ```
-This endpoint will enable you to 'copyright' your project for this hackathon onto the blockchain in the form of a Smart Contract.
+This endpoint will enable you to 'timestamp' your project for this hackathon onto the blockchain in the form of a Smart Contract.
 
 
 ### HTTP Request
