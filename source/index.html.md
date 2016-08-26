@@ -256,7 +256,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-This endpoint helps you ccreate and deploy a Smart Contract on the blockchain. Just send in some parameters for the Smart COntract and it will return a contract address on the testnet
+This endpoint helps you ccreate and deploy a Smart Contract on the blockchain. Just send in some parameters for the Smart Contract and it will return a contract address on the testnet
 
 ### HTTP Request
 
@@ -266,18 +266,13 @@ This endpoint helps you ccreate and deploy a Smart Contract on the blockchain. J
 
 Parameter | Type | Description
 --------- | ------- | -----------
-seed | String | Entropy in the form of a random string, at least 100 characters in length. 
-issuanceDate | String | Entropy in the form of a random string, at least 100 characters in length. 
-studentName | String | Entropy in the form of a random string, at least 100 characters in length. 
-courseName | String | Entropy in the form of a random string, at least 100 characters in length. 
-ipfsHash | String | Entropy in the form of a random string, at least 100 characters in length. 
-owner | String | Entropy in the form of a random string, at least 100 characters in length. 
-directorPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
-chairmanPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
-studentPubKey | String | Entropy in the form of a random string, at least 100 characters in length. 
-directorName | String | Entropy in the form of a random string, at least 100 characters in length. 
-chairmanName | String | Entropy in the form of a random string, at least 100 characters in length. 
-
+seed | String | The 12-word mnemonic, which will create a public/private keypair using which you can sign the transactions
+issuanceDate | String | Issuance date of the certificate, will be printed on the cert
+recipientName | String | Name of the recipient
+courseName | String | Name of the course/certificate
+owner | String | Public key of the owner of this smart contract. He will be the superuser and only he can makes changes to the contract variables
+issuerPubKey | String | Public key of the certificate issuer. Can be the owner or someone else.
+issuerName | String | Entropy in the form of a random string, at least 100 characters in length. 
 
 ## Hackathon copyright
 
