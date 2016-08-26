@@ -13,3 +13,4 @@ Error Code | Meaning
 3 | Invalid Address
 4 | Invalid Seed
 5 | Invalid Entropy Value
+6 | Rate Limit Exceeded
