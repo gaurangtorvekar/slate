@@ -154,6 +154,48 @@ Parameter | Type | Description
 --------- | ------- | -----------
 address | String | The address at which you want to receive 10 Ether
 
+## Get current block number
+
+```shell
+curl -X GET -H "Cache-Control: no-cache" -H "http://localhost:3000/api/rest/getBlockNumber?key=F2kz3F4RZLtuxmk6g"
+```
+
+```code
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://localhost:3000/api/rest/getBlockNumber?key=F2kz3F4RZLtuxmk6g",
+  "method": "GET",
+  "headers": {
+    "cache-control": "no-cache",
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "blockNumber": 1545400
+}
+```
+
+This endpoint will give you the current block number on the Ethereum testnet.
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/getBlockNumber`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+key | String | API key for your account
+
 <!-- ====================================================================================================== -->
 # Wallet Management
 
