@@ -22,9 +22,9 @@ Welcome to the Attores API! You can use our API to access Attores API endpoints,
 You can view code examples on the right section of this page.
 
 <!-- ====================================================================================================== -->
-# Getting balances
+# Ethereum Helpers
 
-## Single Address
+## Balance (Single Address)
 
 ```shell
 curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/getbalance?key=jWH622nG5JuqqFMCn&address=0xe6e5a2941297b0c2850441740b04ea194b841f14"
@@ -66,8 +66,7 @@ Parameter | Type | Description
 --------- | ------- | -----------
 address | String | The address from which you want to find the balance.
 
-
-## Multiple addresses
+## Balances (multiple addresses)
 
 ```shell
 curl -X GET -H "Cache-Control: no-cache" "https://dashboard.attores.com/api/rest/getbalances?key=jWH622nG5JuqqFMCn&addresses=0xe6e5a2941297b0c2850441740b04ea194b841f14,0xb27a2b2b3fe4f2e4bb36d9c03fb8d504c98d8ecb,0xf36ca68454b2d8f3b404f06a9aea8f505f4c8359"
@@ -112,6 +111,48 @@ This endpoint retrieves the balances of an array of addresses that you send.
 Parameter | Type | Description
 --------- | ------- | -----------
 addresses | Comma separated strings | The addresses from which you want to find the balances.
+
+## Get Ether 
+
+```shell
+curl -X GET -H "Cache-Control: no-cache" -H "https://dashboard.attores.com/api/rest/getEther?key=SRM9cpDbXyX8z9L7M&address=0xeB095096534817565dA13aBB0B0842023F594789"
+```
+
+```code
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://dashboard.attores.com/api/rest/getEther?key=SRM9cpDbXyX8z9L7M&address=0xeB095096534817565dA13aBB0B0842023F594789",
+  "method": "GET",
+  "headers": {
+    "cache-control": "no-cache",
+  }
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "transactionHash": "0x0186fc7a78a7172e71fcdf84e74342e5b9012684b81d349c85b875ceb67c9160"
+}
+```
+
+This endpoint will give you 10 Ether for every call. Please note that one API key can receive only 20 Ether. This measure has been put in place to avoid spamming.
+
+### HTTP Request
+
+`GET https://dashboard.attores.com/api/rest/getEther`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ------- | -----------
+address | String | The address at which you want to receive 10 Ether
 
 <!-- ====================================================================================================== -->
 # Wallet Management
